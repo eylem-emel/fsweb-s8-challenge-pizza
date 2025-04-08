@@ -4,7 +4,6 @@ import Home from './components/Home'
 import OrderForm from './components/OrderForm'
 import Success from './components/Success'
 import Footer from './components/Footer'
-import './App.css'
 
 function App() {
   return (
