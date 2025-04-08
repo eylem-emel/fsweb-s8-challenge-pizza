@@ -10,24 +10,28 @@ const IconBar = () => {
   return (
   <div style={{
     backgroundColor: '#FAF7F2',
-    padding: '1rem',
-    display: 'flex',
-    flexDirection: isMobile ? 'column' : 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: isMobile ? '1rem' : '2rem',
+    width: '100%',
     borderBottom: '1px solid #eee',
-    overflowX: isMobile ? 'auto' : 'visible',
-    maxWidth: '100%'
+    padding: '1rem'
   }}>
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: isMobile ? 'repeat(3, 1fr)' : 'repeat(6, auto)',
+      gap: isMobile ? '0.5rem' : '2rem',
+      justifyContent: 'center',
+      maxWidth: '1200px',
+      margin: '0 auto'
+    }}>
 
     {['HTML Kova', 'Pizza', 'Burger', 'Kahvaltılık', 'Fast Food', 'Özel Menü'].map((item, index) => (
       <div key={index} style={{
         display: 'flex',
         alignItems: 'center',
-        gap: '0.5rem',
+        justifyContent: 'center',
+        gap: isMobile ? '0.25rem' : '0.5rem',
         color: '#292929',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        fontSize: isMobile ? '0.8rem' : '1rem'
       }}>
         <img 
           src={`/images/iteration-2-images/icons/${index + 1}.svg`}
@@ -37,6 +41,7 @@ const IconBar = () => {
         <span style={{ fontFamily: '"Barlow", sans-serif' }}>{item}</span>
       </div>
     ))}
+    </div>
   </div>
   );
 };
@@ -47,7 +52,7 @@ const Home = () => {
   return (
     <div style={{ minHeight: '100vh', overflowX: 'hidden' }}>
       <div className="hero" style={{
-        backgroundImage: 'url(/images/iteration-2-images/pictures/form-banner.png)',
+        backgroundImage: 'url(/images/iteration-1-images/home-banner.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         minHeight: isMobile ? '60vh' : '80vh',
