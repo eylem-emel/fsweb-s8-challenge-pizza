@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PromotionCard = ({ image, title, subtitle, buttonText }) => (
+const PromotionCard = ({ image, title, subtitle, buttonText }) => {
+  const isMobile = window.innerWidth <= 768;
+
+  return (
   <div style={{
     borderRadius: '12px',
     overflow: 'hidden',
     position: 'relative',
-    height: '300px'
+    height: isMobile ? '200px' : '300px'
   }}>
     <img 
       src={image} 
@@ -28,7 +31,7 @@ const PromotionCard = ({ image, title, subtitle, buttonText }) => (
     }}>
       <h3 style={{
         fontFamily: '"Barlow", sans-serif',
-        fontSize: '1.5rem',
+        fontSize: isMobile ? '1.2rem' : '1.5rem',
         marginBottom: '0.5rem'
       }}>{title}</h3>
       <p style={{
@@ -41,7 +44,7 @@ const PromotionCard = ({ image, title, subtitle, buttonText }) => (
         style={{
           backgroundColor: '#FDC913',
           color: '#292929',
-          padding: '0.75rem 1.5rem',
+          padding: isMobile ? '0.5rem 1rem' : '0.75rem 1.5rem',
           borderRadius: '4px',
           textDecoration: 'none',
           display: 'inline-block',
@@ -58,9 +61,11 @@ const PromotionCard = ({ image, title, subtitle, buttonText }) => (
       </Link>
     </div>
   </div>
-);
+  );
+};
 
 const Promotions = () => {
+  const isMobile = window.innerWidth <= 768;
   const promotions = [
     {
       image: '/images/iteration-2-images/cta/kart-1.png',
@@ -91,7 +96,7 @@ const Promotions = () => {
         maxWidth: '1200px',
         margin: '0 auto',
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+        gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(300px, 1fr))',
         gap: '2rem'
       }}>
         {promotions.map((promo, index) => (

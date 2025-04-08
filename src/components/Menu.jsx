@@ -1,10 +1,13 @@
 import React from 'react';
 
-const MenuItem = ({ image, title, rating, reviews, price }) => (
+const MenuItem = ({ image, title, rating, reviews, price }) => {
+  const isMobile = window.innerWidth <= 768;
+  
+  return (
   <div style={{
     backgroundColor: '#FAF7F2',
     borderRadius: '12px',
-    padding: '1rem',
+    padding: isMobile ? '0.75rem' : '1rem',
     boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
     display: 'flex',
     flexDirection: 'column',
@@ -22,7 +25,7 @@ const MenuItem = ({ image, title, rating, reviews, price }) => (
     />
     <h3 style={{
       fontFamily: '"Barlow", sans-serif',
-      fontSize: '1.2rem',
+      fontSize: isMobile ? '1rem' : '1.2rem',
       marginBottom: '0.5rem',
       textAlign: 'center'
     }}>{title}</h3>
@@ -37,9 +40,11 @@ const MenuItem = ({ image, title, rating, reviews, price }) => (
       <span style={{ fontWeight: 'bold' }}>{price}₺</span>
     </div>
   </div>
-);
+  );
+};
 
 const Menu = () => {
+  const isMobile = window.innerWidth <= 768;
   const menuItems = [
     {
       image: '/images/iteration-2-images/pictures/food-1.png',
@@ -66,7 +71,7 @@ const Menu = () => {
 
   return (
     <section style={{
-      padding: '4rem 2rem',
+      padding: isMobile ? '2rem 1rem' : '4rem 2rem',
       backgroundColor: '#FAF7F2'
     }}>
       <div style={{
@@ -75,14 +80,14 @@ const Menu = () => {
       }}>
         <h2 style={{
           fontFamily: '"Satisfy", cursive',
-          fontSize: '2rem',
+          fontSize: isMobile ? '1.5rem' : '2rem',
           color: '#CE2829',
           textAlign: 'center',
           marginBottom: '0.5rem'
         }}>en çok performans alanlar</h2>
         <h3 style={{
           fontFamily: '"Barlow", sans-serif',
-          fontSize: '2.5rem',
+          fontSize: isMobile ? '1.75rem' : '2.5rem',
           color: '#292929',
           textAlign: 'center',
           marginBottom: '3rem'
@@ -90,7 +95,7 @@ const Menu = () => {
         
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gridTemplateColumns: isMobile ? 'repeat(1, 1fr)' : 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: '2rem'
         }}>
           {menuItems.map((item, index) => (

@@ -11,8 +11,10 @@ const Footer = () => {
         maxWidth: '1200px',
         margin: '0 auto',
         display: 'flex',
+        flexDirection: window.innerWidth <= 768 ? 'column' : 'row',
         justifyContent: 'space-between',
-        alignItems: 'flex-start'
+        alignItems: window.innerWidth <= 768 ? 'center' : 'flex-start',
+        gap: window.innerWidth <= 768 ? '2rem' : '0'
       }}>
         {/* Logo and Contact */}
         <div style={{ flex: '0 0 auto' }}>

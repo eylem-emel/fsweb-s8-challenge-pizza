@@ -4,15 +4,23 @@ import Menu from './Menu';
 import Promotions from './Promotions';
 import Footer from './Footer';
 
-const IconBar = () => (
+const IconBar = () => {
+  const isMobile = window.innerWidth <= 768;
+  
+  return (
   <div style={{
     backgroundColor: '#FAF7F2',
     padding: '1rem',
     display: 'flex',
+    flexDirection: isMobile ? 'column' : 'row',
     justifyContent: 'center',
-    gap: '2rem',
-    borderBottom: '1px solid #eee'
+    alignItems: 'center',
+    gap: isMobile ? '1rem' : '2rem',
+    borderBottom: '1px solid #eee',
+    overflowX: isMobile ? 'auto' : 'visible',
+    maxWidth: '100%'
   }}>
+
     {['HTML Kova', 'Pizza', 'Burger', 'Kahvaltılık', 'Fast Food', 'Özel Menü'].map((item, index) => (
       <div key={index} style={{
         display: 'flex',
@@ -30,16 +38,19 @@ const IconBar = () => (
       </div>
     ))}
   </div>
-);
+  );
+};
 
 const Home = () => {
+  const isMobile = window.innerWidth <= 768;
+
   return (
-    <div style={{ minHeight: '100vh' }}>
+    <div style={{ minHeight: '100vh', overflowX: 'hidden' }}>
       <div className="hero" style={{
         backgroundImage: 'url(/images/iteration-2-images/pictures/form-banner.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        minHeight: '80vh',
+        minHeight: isMobile ? '60vh' : '80vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -60,7 +71,7 @@ const Home = () => {
         <h1 style={{
           fontFamily: '"Quattrocento", serif',
           color: '#FAF7F2',
-          fontSize: '2.5rem',
+          fontSize: isMobile ? '2rem' : '2.5rem',
           marginBottom: '0.5rem',
           textAlign: 'center'
         }}>
@@ -83,7 +94,7 @@ const Home = () => {
           <h2 style={{
             fontFamily: '"Barlow", sans-serif',
             color: '#FAF7F2',
-            fontSize: '3.5rem',
+            fontSize: isMobile ? '2.5rem' : '3.5rem',
             textAlign: 'center',
             margin: '0',
             letterSpacing: '2px',
