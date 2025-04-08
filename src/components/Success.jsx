@@ -38,7 +38,7 @@ const Success = () => {
           color: '#FDC913',
           marginBottom: '2rem'
         }}>
-          lezzetliz yolda.
+          lezzetin yolda.
         </p>
 
         <h2 style={{

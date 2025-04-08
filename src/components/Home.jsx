@@ -88,7 +88,7 @@ const Home = () => {
           fontSize: '1.5rem',
           margin: '0.5rem 0 1.5rem'
         }}>
-          {'{fazla acıktım}'}
+          {'fırsatı kaçırma'}
         </p>
         <div style={{
           display: 'flex',
