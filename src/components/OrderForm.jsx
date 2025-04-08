@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 const OrderForm = () => {
+  const history = useHistory();
   const [formData, setFormData] = useState({
     name: '',
     size: 'medium',
@@ -64,6 +66,7 @@ const OrderForm = () => {
       try {
         const response = await axios.post('https://reqres.in/api/pizza', formData);
         console.log('Sipariş özeti:', response.data);
+        history.push('/success');
       } catch (error) {
         console.error('Sipariş hatası:', error);
       } finally {
