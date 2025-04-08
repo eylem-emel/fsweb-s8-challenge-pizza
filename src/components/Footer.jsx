@@ -26,15 +26,15 @@ const Footer = () => {
           />
           <div style={{ marginBottom: '1rem' }}>
             <p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-              <img src="/images/iteration-2-images/footer/icons/location.svg" alt="Location" />
+              <img src="/images/iteration-2-images/footer/icons/icon-1.png" alt="Location" style={{ width: '24px', height: '24px' }} />
               391 Londonderry Road<br />İstanbul Türkiye
             </p>
             <p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-              <img src="/images/iteration-2-images/footer/icons/mail.svg" alt="Email" />
+              <img src="/images/iteration-2-images/footer/icons/icon-2.png" alt="Email" style={{ width: '24px', height: '24px' }} />
               aciktim@teknolojiyemekler.com
             </p>
             <p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <img src="/images/iteration-2-images/footer/icons/phone.svg" alt="Phone" />
+              <img src="/images/iteration-2-images/footer/icons/icon-3.png" alt="Phone" style={{ width: '24px', height: '24px' }} />
               +90 216 123 45 67
             </p>
           </div>
