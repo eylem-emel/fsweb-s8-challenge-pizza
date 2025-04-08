@@ -17,8 +17,7 @@ const OrderForm = () => {
   const toppings = [
     'Pepperoni', 'Sucuk', 'Kaşarlı Jambon',
     'Tavuk Izgara', 'Soğan', 'Domates',
-    'Mantar', 'Biber', 'Sucuk',
-    'Zeytin', 'Mısır'
+    'Mantar', 'Biber', 'Zeytin', 'Mısır'
   ];
 
   const validateForm = () => {
