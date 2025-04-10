@@ -10,28 +10,26 @@ const IconBar = () => {
   return (
   <div style={{
     backgroundColor: '#FAF7F2',
-    width: '100%',
+    padding: '1rem',
+    overflowX: 'auto',
     borderBottom: '1px solid #eee',
-    padding: '1rem'
+    WebkitOverflowScrolling: 'touch',
+    msOverflowStyle: '-ms-autohiding-scrollbar'
   }}>
     <div style={{
-      display: 'grid',
-      gridTemplateColumns: isMobile ? 'repeat(3, 1fr)' : 'repeat(6, auto)',
-      gap: isMobile ? '0.5rem' : '2rem',
-      justifyContent: 'center',
-      maxWidth: '1200px',
-      margin: '0 auto'
+      display: 'flex',
+      gap: '2rem',
+      minWidth: isMobile ? 'max-content' : 'auto',
+      justifyContent: 'center'
     }}>
 
     {['HTML Kova', 'Pizza', 'Burger', 'Kahvaltılık', 'Fast Food', 'Özel Menü'].map((item, index) => (
       <div key={index} style={{
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center',
-        gap: isMobile ? '0.25rem' : '0.5rem',
+        gap: '0.5rem',
         color: '#292929',
-        cursor: 'pointer',
-        fontSize: isMobile ? '0.8rem' : '1rem'
+        cursor: 'pointer'
       }}>
         <img 
           src={`/images/iteration-2-images/icons/${index + 1}.svg`}

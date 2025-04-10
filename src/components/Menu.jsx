@@ -50,16 +50,14 @@ const CategoryButton = ({ icon, text }) => {
     <button style={{
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'center',
-      gap: isMobile ? '0.25rem' : '0.5rem',
-      padding: isMobile ? '0.25rem' : '0.5rem 1rem',
+      gap: '0.5rem',
+      padding: '0.5rem 1rem',
       border: 'none',
       background: 'transparent',
       color: '#292929',
-      fontSize: isMobile ? '0.8rem' : '0.9rem',
+      fontSize: '0.9rem',
       fontFamily: '"Barlow", sans-serif',
-      cursor: 'pointer',
-      width: '100%'
+      cursor: 'pointer'
     }}>
       <img src={`/images/iteration-2-images/icons/${icon}.svg`} alt={text} style={{ width: '24px', height: '24px' }} />
       <span>{text}</span>
@@ -129,16 +127,16 @@ const Menu = () => {
         }}>Acıktıran Kodlara Doyuran Lezzetler</h3>
         
         <div style={{
-          width: '100%',
-          marginBottom: '2rem'
+          overflowX: 'auto',
+          marginBottom: '2rem',
+          WebkitOverflowScrolling: 'touch',
+          msOverflowStyle: '-ms-autohiding-scrollbar'
         }}>
           <div style={{
-            display: 'grid',
-            gridTemplateColumns: isMobile ? 'repeat(3, 1fr)' : 'repeat(6, auto)',
-            gap: isMobile ? '0.5rem' : '1rem',
+            display: 'flex',
+            gap: '1rem',
+            minWidth: isMobile ? 'max-content' : 'auto',
             justifyContent: 'center',
-            maxWidth: '1200px',
-            margin: '0 auto',
             padding: '0.5rem'
           }}>
             {categories.map((category, index) => (
